@@ -1,0 +1,210 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Define global colors */
+:root {
+    --primary-color: #ff0000;
+    --secondary-color: #000000;
+}
+
+
+.mulish-font {
+    font-family: "Mulish", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+}
+
+header {
+    background: rgb(223, 215, 215);
+    height: 80px;
+    padding: 0 200px 0 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-menu-items {
+    flex-grow: 1;
+}
+
+.nav-menu-items ul {
+    display: flex;
+    justify-content: flex-end;
+    gap: 60px;
+}
+
+.nav-menu-items ul li {
+    list-style: none;
+}
+
+.nav-menu-items ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 22px;
+    font-weight: 600;
+    user-select: none;
+    position: relative;
+}
+
+
+.nav-menu-items ul li a::after {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 4px;
+    width: 100%;
+    background: var(--primary-color);
+
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 250ms ease-in-out;
+
+}
+
+.nav-menu-items ul li a:hover::after {
+    transform: scale(1);
+    transform-origin: left;
+}
+
+
+
+/* Hero Banner */
+
+.hero-banner {
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 56%, rgba(53,3,3,1) 78%, rgba(89,7,7,1) 85%, rgba(200,0,0,1) 100%);
+    display: flex;
+    padding: 0 200px 0 200px;
+    justify-content: space-between;
+    height: auto;
+}
+
+.hero-banner-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Animation for blinking dots */
+.blinking-dots {
+    color: aliceblue;
+    font-size: 30px;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.dot {
+    animation: blink 2s infinite;
+    display: inline-block;
+}
+
+.dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.hero-banner-right {
+    padding-left: 150px;
+    flex-grow: 0.8;
+    gap: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 400px;
+}
+
+.hero-banner-cta {
+    position: relative;
+    top: 20px;
+    width: 130px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: var(--primary-color);
+    font-weight: 600;
+    color: white;
+    transition: all 0.3s;
+}
+
+.hero-banner-cta:hover {
+    border: #fff 1px solid;
+    scale: 1.02;
+    box-shadow: 0 0 60px .5px rgba(228, 97, 10, 0.5);
+}
+
+.hero-features {
+    text-align: center;
+    color: #FBFCF6;
+}
+
+.hero-icon {
+    font-size: 75px;
+    margin-bottom: 20px;
+}
+
+/* Footer */
+
+footer {
+    background-color:rgb(223, 215, 215);
+    color: #2C2C2B;
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: center;
+}
+
+.footer-brand,
+.footer-menu,
+.copyright {
+    flex: 0 0 30%;
+    padding: 0 20px;
+}
+
+.footer-brand h3 {
+    margin-bottom: 10px;
+}
+
+.footer-menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-menu ul li {
+    margin-bottom: 10px;
+}
+
+.footer-menu ul li a {
+    color: #2C2C2B;
+    text-decoration: none;
+}
+
+.footer-menu ul li a:hover {
+    color: black;
+}
